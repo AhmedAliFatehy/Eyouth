@@ -1,6 +1,7 @@
 package BaseTests;
 
 import Pages.SearchPage;
+import Pages.SocialLinks;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterClass;
@@ -11,6 +12,7 @@ import java.time.Duration;
 public class Base {
     protected WebDriver driver;
     protected SearchPage searchPage;
+    protected SocialLinks socialLinks;
 
     @BeforeClass
     public void setup() {
@@ -19,6 +21,7 @@ public class Base {
         driver.manage().window().maximize();
         driver.get("https://eyouthlearning.com/");
         searchPage = new SearchPage(driver);
+        socialLinks = new SocialLinks(driver);
     }
 
     @AfterClass
